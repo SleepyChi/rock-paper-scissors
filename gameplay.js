@@ -93,6 +93,7 @@ function playRound(playerSelection, computerSelection){
 function resetScore(){
     document.getElementById("compScore").textContent = 0;
     document.getElementById("playerScore").textContent = 0;
+    document.getElementById("roundResult").textContent = "Make your selection!";
     document.getElementById("rockBtn").classList.toggle("hiddenBtn");
     document.getElementById("paperBtn").classList.toggle("hiddenBtn");
     document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
