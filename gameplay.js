@@ -77,21 +77,26 @@ function playRound(playerSelection, computerSelection){
 
     if (compScore == 5){
         document.getElementById("roundResult").textContent = `Computer Wins! ${compScore} to ${playerScore}`;
-        document.getElementById("compScore").textContent = 0;
-        document.getElementById("playerScore").textContent = 0;
         document.getElementById("rockBtn").classList.toggle("hiddenBtn");
         document.getElementById("paperBtn").classList.toggle("hiddenBtn");
         document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
         document.getElementById("resetBtn").classList.toggle("hiddenBtn");
     } else if(playerScore == 5){
         document.getElementById("roundResult").textContent = `You Win! ${playerScore} to ${compScore}`;
-        document.getElementById("compScore").textContent = 0;
-        document.getElementById("playerScore").textContent = 0;
         document.getElementById("rockBtn").classList.toggle("hiddenBtn");
         document.getElementById("paperBtn").classList.toggle("hiddenBtn");
         document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
         document.getElementById("resetBtn").classList.toggle("hiddenBtn");
     }
+}
+
+function resetScore(){
+    document.getElementById("compScore").textContent = 0;
+    document.getElementById("playerScore").textContent = 0;
+    document.getElementById("rockBtn").classList.toggle("hiddenBtn");
+    document.getElementById("paperBtn").classList.toggle("hiddenBtn");
+    document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
+    document.getElementById("resetBtn").classList.toggle("hiddenBtn");
 }
 
 function game(){
@@ -106,4 +111,6 @@ function game(){
     document.getElementById("scissorsBtn").addEventListener("click", () => {
         playRound("scissors", computerPlay());
     });
+
+    document.getElementById("resetBtn").addEventListener("click", resetScore);
 }
