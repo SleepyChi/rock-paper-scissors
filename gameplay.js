@@ -75,14 +75,22 @@ function playRound(playerSelection, computerSelection){
         }
     }
 
-    if (playerScore == 5){
+    if (compScore == 5){
         document.getElementById("roundResult").textContent = `Computer Wins! ${compScore} to ${playerScore}`;
         document.getElementById("compScore").textContent = 0;
         document.getElementById("playerScore").textContent = 0;
-    } else if(compScore == 5){
-        document.getElementById("roundResult").textContent = `You Win! ${compScore} to ${playerScore}`;
+        document.getElementById("rockBtn").classList.toggle("hiddenBtn");
+        document.getElementById("paperBtn").classList.toggle("hiddenBtn");
+        document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
+        document.getElementById("resetBtn").classList.toggle("hiddenBtn");
+    } else if(playerScore == 5){
+        document.getElementById("roundResult").textContent = `You Win! ${playerScore} to ${compScore}`;
         document.getElementById("compScore").textContent = 0;
         document.getElementById("playerScore").textContent = 0;
+        document.getElementById("rockBtn").classList.toggle("hiddenBtn");
+        document.getElementById("paperBtn").classList.toggle("hiddenBtn");
+        document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
+        document.getElementById("resetBtn").classList.toggle("hiddenBtn");
     }
 }
 
@@ -98,36 +106,4 @@ function game(){
     document.getElementById("scissorsBtn").addEventListener("click", () => {
         playRound("scissors", computerPlay());
     });
-
-    /*for(let i = 0; i < 5; i++){
-        console.log(`Round ${i+1}`);
-        alert(`Round ${i+1}`);
-        
-        playerChoice = playerPlay();
-        computerChoice = computerPlay();
-        
-        console.log("player: " + playerChoice + "   computer: " + computerChoice);
-        whoWon = playRound(playerChoice, computerChoice);
-
-        if (whoWon == "computer"){
-            computerScore++;
-            console.log(`You lose this round! ${computerChoice} beats ${playerChoice}!`);
-            alert(`You lose this round! ${computerChoice} beats ${playerChoice}!`);
-        } else if (whoWon == "player") {
-            playerScore++;
-            console.log(`You win this round! ${playerChoice} beats ${computerChoice}!`);
-            alert(`You win this round! ${playerChoice} beats ${computerChoice}!`);
-        } else {
-            console.log("Tie!");
-            alert("Tie!");
-        }
-    }
-
-    if (playerScore > computerScore){
-        console.log(`You won! The score was ${playerScore} to ${computerScore}.`);
-        alert(`You won! The score was ${playerScore} to ${computerScore}.`);
-    } else if (computerScore > playerScore){
-        console.log(`You lost! The score was ${computerScore} to ${playerScore}.`);
-        alert(`You lost! The score was ${computerScore} to ${playerScore}.`);
-    }*/
 }
