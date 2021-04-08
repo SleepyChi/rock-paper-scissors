@@ -7,15 +7,23 @@
     </head>
     <body onload="game()">
         <div id="gameStats">
-            <p>Player Score:</p>
-            <p id="playerScore">0</p>
-            <p>Computer Score:</p>
-            <p id="compScore">0</p>
-            <p id="roundResult">Make your selection!</p>
+            <div class="stats" id="playerStats">
+                <p>Player Score:</p>
+                <p id="playerScore">0</p>
+            </div>
+            <div class="stats" id="computerStats">
+                <p>Computer Score:</p>
+                <p id="compScore">0</p>
+            </div>  
         </div>
-        <button id="rockBtn">Rock</button>
-        <button id="paperBtn">Paper</button>
-        <button id="scissorsBtn">Scissors</button>
-        <button class="hiddenBtn" id="resetBtn">New Game</button>
+        <p id="roundResult">Make your selection!</p>
+        <div id="buttons">
+            <div id="choices">
+                <button id="rockBtn">Rock</button>
+                <button id="paperBtn">Paper</button>
+                <button id="scissorsBtn">Scissors</button>
+            </div>  
+            <button class="hiddenBtn" id="resetBtn">New Game</button>
+        </div>  
     </body>
 </html>

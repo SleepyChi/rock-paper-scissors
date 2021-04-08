@@ -76,24 +76,27 @@ function playRound(playerSelection, computerSelection){
     }
 
     if (compScore == 5){
+        document.getElementById("buttons").style.flexDirection = "column-reverse";
+        document.getElementById("rockBtn").classList.toggle("hiddenBtn");
+        document.getElementById("paperBtn").classList.toggle("hiddenBtn");
+        document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
+        document.getElementById("resetBtn").classList.toggle("hiddenBtn");
         document.getElementById("roundResult").textContent = `Computer Wins! ${compScore} to ${playerScore}`;
-        document.getElementById("rockBtn").classList.toggle("hiddenBtn");
-        document.getElementById("paperBtn").classList.toggle("hiddenBtn");
-        document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
-        document.getElementById("resetBtn").classList.toggle("hiddenBtn");
     } else if(playerScore == 5){
-        document.getElementById("roundResult").textContent = `You Win! ${playerScore} to ${compScore}`;
+        document.getElementById("buttons").style.flexDirection = "column-reverse";
         document.getElementById("rockBtn").classList.toggle("hiddenBtn");
         document.getElementById("paperBtn").classList.toggle("hiddenBtn");
         document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");
         document.getElementById("resetBtn").classList.toggle("hiddenBtn");
+        document.getElementById("roundResult").textContent = `You Win! ${playerScore} to ${compScore}`;
     }
 }
 
 function resetScore(){
     document.getElementById("compScore").textContent = 0;
     document.getElementById("playerScore").textContent = 0;
-    document.getElementById("roundResult").textContent = "Make your selection!";
+    document.getElementById("roundResult").textContent = "Make your selection!"
+    document.getElementById("buttons").style.flexDirection = "column";
     document.getElementById("rockBtn").classList.toggle("hiddenBtn");
     document.getElementById("paperBtn").classList.toggle("hiddenBtn");
     document.getElementById("scissorsBtn").classList.toggle("hiddenBtn");

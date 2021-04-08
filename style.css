@@ -5,3 +5,28 @@
 .hiddenBtn {
     visibility: hidden;
 }
+
+.stats{
+    display: flex;
+    flex-direction: column;
+}
+
+#gameStats {
+    display: flex;
+    justify-content: space-around;
+}
+
+#roundResult{
+    text-align: center;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#choices {
+    display: flex;
+    justify-content: space-evenly;
+}
